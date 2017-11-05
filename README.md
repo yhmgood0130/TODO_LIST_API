@@ -6,6 +6,8 @@
 
 ## Unit Testing Image
 
+![Image]('./images/mocha & chai.png')
+
 ## Technologies
 
 JavaScript, Node.js, Express, PostgreSQL, Heroku, Mocha & Chai
@@ -15,7 +17,7 @@ JavaScript, Node.js, Express, PostgreSQL, Heroku, Mocha & Chai
 Get all lists
 https://todo-list-api-13.herokuapp.com/todolist/lists
 
-Get by ID example 
+Get by ID example
 https://todo-list-api-13.herokuapp.com/todolist/list?id=3
 
 Get by Type

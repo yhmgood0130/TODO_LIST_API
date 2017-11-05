@@ -53,10 +53,10 @@ describe('TODO_LIST', function() {
       .end(function(err, res) {
       res.should.have.status(200);
       res.should.be.json; // jshint ignore:line
-      res.body.should.be.a('object');
-      res.body.should.have.property('task');
-      res.body.task.should.equal('Group Meeting');
-      res.body.should.have.property('type');
+      res.body.should.be.a('array');
+      res.body[0].should.have.property('task');
+      res.body[0].task.should.equal('Group Meeting');
+      res.body[0].should.have.property('type');
       done();
       });
     });

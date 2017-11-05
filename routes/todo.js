@@ -14,11 +14,11 @@ router.get('/todolist/list', (req,res,next) => {
 
   if(id){
     queries.getById(id).then(list => {
-      res.status(200).json(list[0]);
+      res.status(200).json(list);
     })
   } else if (type){
     queries.getByType(type).then(lists => {
-      res.status(200).json(lists[0]);
+      res.status(200).json(lists);
     })
   }
 })
