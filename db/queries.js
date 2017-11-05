@@ -17,6 +17,6 @@ module.exports = {
     return knex('list').where('id',id).update(list).returning('*');
   },
   deleteList: function(id) {
-    return knex('list').where('id',id).del();
+    return knex('list').where('id',id).del().returning('*');
   }
 }

@@ -4,7 +4,6 @@ exports.up = function(knex, Promise) {
     table.increments('id').primary();
     table.string('task').notNull();
     table.text('type').nullable();
-    table.dateTime('schedule').nullable();
   })
 
 };

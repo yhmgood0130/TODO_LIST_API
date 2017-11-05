@@ -31,6 +31,11 @@ router.post('/todolist', (req,res,next) => {
 })
 
 router.put('/todolist/:id', (req,res,next) => {
+  if(req.body.hasOwnProperty('id')) {
+    return res.status(422).json({
+      error: 'You cannot update the id field'
+    });
+  }
   let id = req.params.id;
   queries.editList(id,req.body).then(list => {
     res.status(200).json(list[0]);
@@ -40,7 +45,7 @@ router.put('/todolist/:id', (req,res,next) => {
 router.delete('/todolist/:id', (req,res,next) => {
   let id = req.params.id;
   queries.deleteList(id).then(deleted => {
-    res.status(200).json({success: true,message:"deleted"});
+    res.status(200).json(deleted[0]);
   })
 })
 
