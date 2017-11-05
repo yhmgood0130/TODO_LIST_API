@@ -6,7 +6,7 @@
 
 ## Unit Testing Image
 
-![Image]('./images/mocha & chai.png')
+![Alt text]('./images/mocha & chai.png')
 
 ## Technologies
 
