@@ -1,22 +1,22 @@
 module.exports = [
   {
     task: "Clean the room",
-    type: "Cleaning",
+    type: "cleaning",
     schedule: "11/05/2017"
   },
   {
     task: "Learn about ASP.NET",
-    type: "Work",
+    type: "work",
     schedule: "11/07/2017"
   },
   {
     task: "Clean the cat litter",
-    type: "Cleaning"
+    type: "cleaning"
   },
   {
     task: "Group Meeting",
-    type: "Work",
-    schedule: "11/07/2017"
+    type: "work",
+    schedule: "11/07/2017T07:00:00.000Z"
   },
   {
     task: "Hang Out with Howard",
@@ -24,6 +24,6 @@ module.exports = [
   },
   {
     task: "Play Video game",
-    type: "Hobby"
+    type: "hobby"
   }
 ]

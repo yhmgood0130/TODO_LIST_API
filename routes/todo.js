@@ -2,45 +2,45 @@ const express = require('express');
 const router = express.Router();
 const queries = require('../db/queries');
 
-router.get('/lists',(req,res,next) => {
+router.get('/todolist/lists',(req,res,next) => {
   queries.getAll().then(lists => {
     res.status(200).json(lists);
   })
 })
 
-// router.get('/list/:id', (req,res,next) => {
-//   let id = req.params.id;
-//   queries.getById(id).then(list => {
-//     res.status(200).json(list);
-//   })
-// })
+router.get('/todolist/list', (req,res,next) => {
+  let id = req.query.id;
+  let type = req.query.type;
 
-router.get('/lists/list', (req,res,next) => {
-  let items = req.query.type;
-  console.log(items);
-  queries.getByType(items).then(lists => {
-    res.status(200).json(lists);
-  })
+  if(id){
+    queries.getById(id).then(list => {
+      res.status(200).json(list[0]);
+    })
+  } else if (type){
+    queries.getByType(type).then(lists => {
+      res.status(200).json(lists[0]);
+    })
+  }
 })
 
-router.post('/list', (req,res,next) => {
+router.post('/todolist', (req,res,next) => {
   let addList = req.body;
   queries.addList(addList).then(list => {
     res.status(200).json(list[0]);
   })
 })
 
-router.put('/list/:id', (req,res,next) => {
+router.put('/todolist/:id', (req,res,next) => {
   let id = req.params.id;
   queries.editList(id,req.body).then(list => {
     res.status(200).json(list[0]);
   })
 })
 
-router.delete('/list/:id', (req,res,next) => {
+router.delete('/todolist/:id', (req,res,next) => {
   let id = req.params.id;
   queries.deleteList(id).then(deleted => {
-    message: 'List deleted!';
+    res.status(200).json({success: true,message:"deleted"});
   })
 })
 
